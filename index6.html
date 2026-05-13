@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" class="blue-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD AHMED HASHMI | Technical Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+        :root {
+            --primary: #1E40AF;
+            --primary-dark: #1E3A8A;
+            --sidebar-bg: linear-gradient(180deg, #EFF6FF 0%, #DBEAFE 100%);
+        }
+
+        .tailwind-ready { font-family: 'Inter', system-ui, sans-serif; }
+        .header-font { font-family: 'Playfair Display', sans-serif; }
+
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 25px 50px -12px rgb(30 64 175 / 0.25);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* Print Optimization - Most Important */
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        @media print {
+            body { 
+                margin: 0; 
+                padding: 0; 
+                background: white; 
+            }
+            .resume-container {
+                box-shadow: none;
+                border-radius: 0;
+                width: 210mm;
+                min-height: 297mm;
+                margin: 0 auto;
+                page-break-inside: avoid;
+            }
+            .no-print { display: none !important; }
+            .experience-card { break-inside: avoid; }
+        }
+
+        .sidebar { background: var(--sidebar-bg); }
+
+        .section-title {
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: -6px;
+            left: 0;
+            border-radius: 9999px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #60a5fa);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="tailwind-ready bg-slate-100 py-6">
+
+    <!-- Top Bar (Hidden in Print) -->
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 mb-6 flex justify-between items-center no-print">
+        <div class="flex items-center gap-x-3">
+            <div class="w-10 h-10 bg-blue-700 rounded-3xl flex items-center justify-center text-white text-3xl">💻</div>
+            <h1 class="text-2xl font-semibold text-blue-700">MUHAMMAD AHMED HASHMI</h1>
+        </div>
+        <button onclick="window.print()" 
+                class="bg-blue-700 text-white px-6 py-3 rounded-3xl font-medium flex items-center gap-2 hover:bg-blue-800">
+            <i class="fa-solid fa-print"></i> Save as PDF
+        </button>
+    </div>
+
+    <!-- Resume Content -->
+    <div class="resume-container mx-auto bg-white">
+
+        <!-- Header -->
+        <div class="bg-[var(--primary)] text-white px-8 md:px-12 py-9 flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-shrink-0">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden border-8 border-white">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFXgMKltAGFeA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718221418837?e=1777507200&v=beta&t=2GgtL_L1ZjpQOsqeAw9jY-FBzAeIsTmGVE4ICi8KZno" 
+                         alt="Muhammad Ahmed Hashmi" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="header-font text-5xl md:text-6xl font-bold tracking-tighter">MUHAMMAD AHMED HASHMI</h1>
+                <p class="text-2xl md:text-3xl font-medium tracking-widest mt-2">TECHNICAL CONSULTANT</p>
+            </div>
+
+            <div class="text-sm md:text-right hidden sm:block">
+                <p>2.5+ Years D365 F&O</p>
+                <p class="text-xs opacity-75 mt-2">Available Immediately</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row">
+            <!-- Sidebar -->
+            <div class="lg:w-96 bg-slate-50 p-8 space-y-8 border-r">
+                <!-- Contact -->
+                <div>
+                    <h2 class="text-blue-700 font-semibold text-xl mb-5 flex items-center gap-2">
+                        <i class="fa-solid fa-address-card"></i> CONTACT
+                    </h2>
+                    <div class="space-y-4 text-sm">
+                        <p><strong>Email:</strong><br>ahmedhashmijunior97@gmail.com</p>
+                        <p><strong>Phone:</strong><br>+92 336 2245627</p>
+                        <p><strong>Address:</strong><br>House R-75, Sector 16-A<br>Gulshan-e-Waseem, Bufferzone<br>Karachi, Sindh</p>
+                    </div>
+                </div>
+
+                <!-- Skills -->
+                <div>
+                    <h2 class="text-blue-700 font-semibold text-xl mb-5">SKILLS</h2>
+                    <div class="space-y-6">
+                        <div>
+                            <p class="font-medium">Problem Solving</p>
+                            <div class="skill-bar mt-1"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                        <div>
+                            <p class="font-medium">Technical Expertise</p>
+                            <div class="skill-bar mt-1"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                        <div>
+                            <p class="font-medium">Communication</p>
+                            <div class="skill-bar mt-1"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h2 class="text-blue-700 font-semibold text-xl mb-5">EDUCATION</h2>
+                    <div class="space-y-5 text-sm">
+                        <div><p class="font-semibold">MCS – Master's in Computer Science</p><p class="text-slate-500">University of Karachi</p></div>
+                        <div><p class="font-semibold">BCS – Bachelor of Computer Science</p><p class="text-slate-500">University of Karachi</p></div>
+                        <div><p class="font-semibold">Intermediate</p><p class="text-slate-500">BIE Karachi</p></div>
+                        <div><p class="font-semibold">Matriculation</p><p class="text-slate-500">BSE Karachi</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="flex-1 p-8 md:p-12">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">About Me</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    I began my professional journey as a frontend developer, but over time, I developed a keen interest in backend development. 
+                    Currently, I am proficiently working with Microsoft's Dynamics 365 Finance and Operations (D365 F&O) with <strong>2.5+ years</strong> of valuable experience.
+                </p>
+
+                <h2 class="text-2xl font-semibold text-blue-700 mt-12 mb-6">Work Experience</h2>
+
+                <div class="space-y-10">
+                    <div>
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="font-semibold text-xl">Technical Consultant</h3>
+                                <p class="text-blue-700">DINERS • Karachi</p>
+                            </div>
+                            <p class="text-slate-500">Dec 2022 – Present</p>
+                        </div>
+                        <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600">
+                            <li>Client communication & requirement analysis</li>
+                            <li>System design and technical solution implementation</li>
+                            <li>D365 F&O implementation, integration & troubleshooting</li>
+                            <li>Training and ongoing client support</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="flex justify-between">
+                            <div>
+                                <h3 class="font-semibold text-xl">.NET Developer</h3>
+                                <p class="text-blue-700">EDUMAN • Karachi</p>
+                            </div>
+                            <p class="text-slate-500">Feb 2020 – Nov 2022</p>
+                        </div>
+                        <ul class="mt-4 list-disc pl-5 space-y-2 text-slate-600">
+                            <li>Developed full-stack School Management System (EDUMAN)</li>
+                            <li>Built multiple Crystal Reports for fee & student management</li>
+                            <li>.NET MVC backend development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD AHMED HASHMI | Technical Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@500;600&amp;display=swap');
+
+        :root {
+            --primary: #1e2937;
+        }
+
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 200ms;
+        }
+
+        .resume-body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+
+        .heading-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+
+        .resume-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: white;
+            box-shadow: 0 35px 60px -15px rgb(0 0 0 / 0.2);
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .resume-container {
+                max-width: none;
+                width: 210mm;
+                margin: 0 auto;
+                box-shadow: none;
+                border: none;
+                page-break-inside: avoid;
+            }
+            body { background: white; margin: 0; }
+            .print-page { page-break-after: always; }
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', sans-serif;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 48px;
+            height: 3px;
+            background: #0ea5e9;
+            bottom: -6px;
+            left: 0;
+        }
+
+        .bullet {
+            position: relative;
+        }
+        .bullet:before {
+            content: '•';
+            color: #0ea5e9;
+            font-size: 22px;
+            line-height: 1;
+            position: absolute;
+            left: -22px;
+            top: 1px;
+        }
+
+        .rating-star {
+            color: #facc15;
+        }
+    </style>
+</head>
+<body class="resume-body bg-slate-100 py-8">
+
+    <!-- Top Navigation Bar -->
+    <div class="no-print max-w-[1100px] mx-auto px-8 mb-6 flex items-center justify-between bg-white shadow-md rounded-3xl py-4 sticky top-4 z-50">
+        <div class="flex items-center gap-x-4">
+            <div class="w-10 h-10 bg-[#0ea5e9] text-white rounded-2xl flex items-center justify-center text-2xl font-bold">AH</div>
+            <div>
+                <h1 class="text-2xl font-semibold text-slate-900">MUHAMMAD AHMED HASHMI</h1>
+                <p class="text-sm text-[#0ea5e9] font-medium">Technical Consultant • D365 F&amp;O Specialist</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-x-6 text-sm">
+            <a onclick="document.getElementById('summary').scrollIntoView({ behavior: 'smooth' })" class="hover:text-[#0ea5e9] font-medium cursor-pointer">SUMMARY</a>
+            <a onclick="document.getElementById('experience').scrollIntoView({ behavior: 'smooth' })" class="hover:text-[#0ea5e9] font-medium cursor-pointer">EXPERIENCE</a>
+            <a onclick="document.getElementById('education').scrollIntoView({ behavior: 'smooth' })" class="hover:text-[#0ea5e9] font-medium cursor-pointer">EDUCATION</a>
+            <a onclick="document.getElementById('skills').scrollIntoView({ behavior: 'smooth' })" class="hover:text-[#0ea5e9] font-medium cursor-pointer">SKILLS</a>
+            <a onclick="document.getElementById('hobbies').scrollIntoView({ behavior: 'smooth' })" class="hover:text-[#0ea5e9] font-medium cursor-pointer">HOBBIES</a>
+
+            <div class="flex items-center gap-x-3 border-l border-slate-200 pl-6">
+                <button onclick="copyToClipboard('phone')" 
+                        class="flex items-center gap-x-2 text-slate-700 hover:text-[#0ea5e9] font-medium">
+                    <i class="fa-solid fa-phone"></i>
+                    <span class="hidden sm:inline">+92 336 2245627</span>
+                </button>
+                <button onclick="copyToClipboard('email')" 
+                        class="flex items-center gap-x-2 text-slate-700 hover:text-[#0ea5e9] font-medium">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="hidden sm:inline">ahmedhashmijunior97@gmail.com</span>
+                </button>
+                <button onclick="window.print()" 
+                        class="ml-3 bg-[#0ea5e9] hover:bg-[#0284c8] text-white px-8 py-3 rounded-3xl font-semibold flex items-center gap-x-2 shadow-lg shadow-sky-500/30">
+                    <i class="fa-solid fa-download"></i>
+                    DOWNLOAD PDF
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RESUME CONTENT -->
+    <div class="resume-container mx-auto rounded-3xl overflow-hidden print-page">
+
+        <!-- HEADER -->
+        <div class="bg-[#0f172a] text-white px-12 py-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-y-6">
+                <div>
+                    <h1 class="heading-font text-6xl tracking-[-2px] leading-none">MUHAMMAD AHMED HASHMI</h1>
+                    <p class="text-2xl text-sky-400 mt-2 font-medium">Technical Consultant</p>
+                </div>
+
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-x-10 gap-y-4 text-sm">
+                    <div class="flex items-center gap-x-3">
+                        <i class="fa-solid fa-phone text-sky-400 text-xl"></i>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-slate-400">Phone</div>
+                            <a href="tel:+923362245627" class="font-medium">+92 336 2245627</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-x-3">
+                        <i class="fa-solid fa-envelope text-sky-400 text-xl"></i>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-slate-400">Email</div>
+                            <a href="mailto:ahmedhashmijunior97@gmail.com" class="font-medium">ahmedhashmijunior97@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-x-3">
+                        <i class="fa-solid fa-location-dot text-sky-400 text-xl"></i>
+                        <div>
+                            <div class="text-xs uppercase tracking-widest text-slate-400">Location</div>
+                            <span class="font-medium">Karachi, Pakistan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side info -->
+                <div class="text-xs flex flex-col gap-y-1 text-right">
+                    <div><span class="text-slate-400">Date of Birth:</span> 11 Jan 1997</div>
+                    <div><span class="text-slate-400">Nationality:</span> Pakistani</div>
+                    <div><span class="text-slate-400">Gender:</span> Male | Marital Status: Single</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUMMARY -->
+        <div id="summary" class="px-12 py-10 border-b">
+            <h2 class="section-title text-3xl mb-6 text-slate-800">PROFESSIONAL SUMMARY</h2>
+            <p class="text-slate-700 leading-relaxed text-[17px]">
+                I began my professional journey as a frontend developer, but over time, I developed a keen interest in backend development. 
+                Throughout my career, I have worked with various tech stacks, including .NET MVC web applications, which gave me a solid foundation 
+                in full-stack development. Currently, I am proficiently using Microsoft’s efficient ERP solution, 
+                <strong>Dynamics 365 Finance and Operations (D365 F&amp;O)</strong>, which has proven to be highly user-friendly and effective. 
+                I am passionate about this field and aspire to pursue my career by working extensively with Dynamics 365 Finance and Operations. 
+                Additionally, I already have <strong class="text-[#0ea5e9]">2.5 years of valuable experience in D365 F&amp;O</strong>.
+            </p>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div id="experience" class="px-12 py-10 border-b bg-slate-50">
+            <h2 class="section-title text-3xl mb-8 text-slate-800">WORK EXPERIENCE</h2>
+            
+            <div class="flex gap-8">
+                <div class="w-40 flex-shrink-0">
+                    <div class="text-sm font-semibold text-slate-500">December 2022 – Present</div>
+                    <div class="mt-1 text-xl font-semibold">DINERS</div>
+                    <div class="text-slate-600">Karachi, Sindh</div>
+                    <div class="mt-4 inline-block bg-[#0ea5e9] text-white text-xs font-bold px-6 py-2 rounded-3xl">TECHNICAL CONSULTANT</div>
+                </div>
+
+                <div class="flex-1">
+                    <ul class="space-y-6 text-slate-700 text-[17px]">
+                        <li class="bullet">Communicate with clients to understand technical needs and challenges.</li>
+                        <li class="bullet">Analyze existing systems and processes to identify areas for improvement.</li>
+                        <li class="bullet">Design technical solutions aligned with business objectives.</li>
+                        <li class="bullet">Assist with implementation, integration, and troubleshooting.</li>
+                        <li class="bullet">Provide training, documentation, and ongoing support to clients.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div id="education" class="px-12 py-10 border-b">
+            <h2 class="section-title text-3xl mb-8 text-slate-800">EDUCATION</h2>
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-y-6">
+                <div>
+                    <div class="flex items-center gap-x-3">
+                        <span class="bg-amber-100 text-amber-700 px-4 h-8 rounded-3xl text-sm font-semibold flex items-center">ONGOING</span>
+                        <span class="text-slate-500 font-medium">February 2020 – Present</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mt-3">Bachelor of Science in Computer Science And Programming</h3>
+                    <p class="text-slate-600 text-lg mt-1">University of Karachi, Karachi, Sindh</p>
+                </div>
+                <div class="max-w-xs text-slate-600 text-[15px] italic border-l border-slate-200 pl-6">
+                    Building strong foundations in programming and computer science while gaining practical experience in enterprise ERP solutions.
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div id="skills" class="px-12 py-10 border-b bg-slate-50">
+            <h2 class="section-title text-3xl mb-8 text-slate-800">SKILLS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-3xl shadow-sm">
+                    <div class="flex justify-between mb-4">
+                        <span class="font-semibold text-xl">Problem Solving</span>
+                        <div class="flex gap-x-px text-3xl rating-star">★★★★☆</div>
+                    </div>
+                    <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-3 w-[85%] bg-gradient-to-r from-amber-400 to-yellow-500"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm">
+                    <div class="flex justify-between mb-4">
+                        <span class="font-semibold text-xl">Technical Expertise</span>
+                        <div class="flex gap-x-px text-3xl rating-star">★★★★☆</div>
+                    </div>
+                    <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-3 w-[80%] bg-gradient-to-r from-sky-400 to-blue-600"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3">.NET MVC • D365 F&amp;O • Full-Stack Development</p>
+                </div>
+                <div class="bg-white p-6 rounded-3xl shadow-sm">
+                    <div class="flex justify-between mb-4">
+                        <span class="font-semibold text-xl">Communication</span>
+                        <div class="flex gap-x-px text-3xl rating-star">★★★★☆</div>
+                    </div>
+                    <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                        <div class="h-3 w-[85%] bg-gradient-to-r from-emerald-400 to-teal-500"></div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-3">Client Interaction • Training • Documentation</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- HOBBIES & REFERENCES -->
+        <div class="px-12 py-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Hobbies -->
+            <div id="hobbies">
+                <h2 class="section-title text-3xl mb-6 text-slate-800">HOBBIES</h2>
+                <div class="flex flex-wrap gap-3">
+                    <div class="bg-slate-100 hover:bg-sky-100 px-8 py-4 rounded-3xl text-slate-700 font-medium flex items-center gap-x-3">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        Programming Projects
+                    </div>
+                    <div class="bg-slate-100 hover:bg-sky-100 px-8 py-4 rounded-3xl text-slate-700 font-medium flex items-center gap-x-3">
+                        <i class="fa-solid fa-book-open"></i>
+                        Reading Tech Books
+                    </div>
+                    <div class="bg-slate-100 hover:bg-sky-100 px-8 py-4 rounded-3xl text-slate-700 font-medium flex items-center gap-x-3">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                        Problem Solving Games
+                    </div>
+                </div>
+            </div>
+
+            <!-- References -->
+            <div id="references">
+                <h2 class="section-title text-3xl mb-6 text-slate-800">REFERENCES</h2>
+                <div class="bg-gradient-to-br from-slate-800 to-slate-900 text-white p-8 rounded-3xl">
+                    <p class="font-medium text-lg">Mr. Mohd Imran Laheji</p>
+                    <p class="text-sky-400">IT Head – Diners</p>
+                    <p class="mt-8 text-slate-300 text-sm leading-relaxed">
+                        Contact details available upon request.<br>
+                        Professional reference from current employer.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- BOTTOM BAR -->
+        <div class="bg-[#0f172a] text-white text-xs px-12 py-6 flex items-center justify-between text-slate-400">
+            <div>© 2026 Muhammad Ahmed Hashmi • Technical Consultant</div>
+            <div class="flex items-center gap-x-8">
+                <span onclick="window.print()" class="flex items-center gap-x-2 cursor-pointer hover:text-white">
+                    <i class="fa-solid fa-file-pdf"></i> SAVE AS PDF
+                </span>
+                <span class="text-emerald-400 font-medium">2.5 YEARS D365 F&amp;O EXPERIENCE • READY FOR NEW OPPORTUNITIES</span>
+            </div>
+            <div class="text-xs font-medium">Built as Interactive Resume Web App</div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(type) {
+            let text = type === 'phone' ? '+923362245627' : 'ahmedhashmijunior97@gmail.com';
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.createElement('div');
+                toast.className = 'fixed bottom-8 right-8 bg-emerald-600 text-white px-6 py-3 rounded-3xl shadow-xl flex items-center gap-x-3';
+                toast.innerHTML = `<i class="fa-solid fa-check-circle"></i> ${type === 'phone' ? 'Phone number' : 'Email'} copied!`;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2500);
+            });
+        }
+
+        // Print optimization
+        window.addEventListener('beforeprint', () => {
+            console.log('%c✅ Printing professional resume...', 'color:#0ea5e9; font-weight:bold');
+        });
+
+        console.log('%c🚀 Professional Resume WebApp – Muhammad Ahmed Hashmi (D365 F&O Technical Consultant)', 'color:#0ea5e9; font-size:14px;');
+    </script>
+</body>
+</html>

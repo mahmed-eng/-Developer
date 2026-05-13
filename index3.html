@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmed Khan | D365 FinOps Technical Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+        :root {
+            --primary: #00d4ff;
+            --primary-dark: #00a8cc;
+        }
+
+        * {
+            transition-property: color, background-color, border-color, transform;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+
+        .tailwind-ready {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+
+        .header-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 25px 60px -15px rgb(0 212 255 / 0.25);
+        }
+
+        .sidebar {
+            background: linear-gradient(180deg, #0f172a 0%, #1e2937 100%);
+        }
+
+        .section-title {
+            position: relative;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: var(--primary);
+            bottom: -8px;
+            left: 0;
+            border-radius: 9999px;
+        }
+
+        .experience-card {
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 212 255 / 0.15);
+        }
+
+        .tech-icon {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+        }
+
+        .photo-frame {
+            border: 6px solid var(--primary);
+            box-shadow: 0 0 0 12px rgba(15, 23, 42, 0.6);
+        }
+
+        @media print {
+            .no-print { display: none !important; }
+            .resume-container { box-shadow: none; max-width: none; }
+            body { background: white; color: black; }
+            .sidebar { background: #f8fafc !important; color: black; }
+        }
+
+        @media (max-width: 1024px) {
+            .header-name { font-size: 2.75rem !important; }
+        }
+    </style>
+</head>
+<body class="tailwind-ready bg-zinc-950 py-8">
+    <!-- Top Bar -->
+    <div class="max-w-[1200px] mx-auto px-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-x-4">
+            <div class="w-11 h-11 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold rotate-12 shadow-inner">
+                D
+            </div>
+            <div>
+                <h1 class="text-3xl font-semibold text-white header-font tracking-tighter">Ahmed Khan</h1>
+                <p class="text-cyan-400 text-sm -mt-1">D365 FinOps • X++ • SQL Expert</p>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-x-4 no-print flex-wrap">
+            <button onclick="downloadPDF()" 
+                    class="flex items-center gap-x-2 bg-white hover:bg-cyan-400 hover:text-white text-zinc-900 px-6 py-3 rounded-2xl font-semibold shadow-lg">
+                <i class="fa-solid fa-download"></i>
+                <span>Download PDF</span>
+            </button>
+
+            <button onclick="window.print()" 
+                    class="flex items-center gap-x-2 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-white px-6 py-3 rounded-2xl font-medium">
+                <i class="fa-solid fa-print"></i>
+                <span>Print</span>
+            </button>
+
+            <a href="https://linkedin.com/in/ahmedkhan-d365" target="_blank"
+               class="flex items-center gap-x-2 text-cyan-400 hover:text-white">
+                <i class="fa-brands fa-linkedin text-3xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Resume Container -->
+    <div class="resume-container mx-auto bg-white rounded-3xl overflow-hidden border border-slate-200 mx-4 sm:mx-auto">
+        
+        <!-- HEADER -->
+        <div class="bg-gradient-to-r from-zinc-900 to-slate-900 text-white px-8 md:px-12 py-10 flex flex-col lg:flex-row items-center gap-8">
+            <!-- Photo -->
+            <div class="flex-shrink-0">
+                <div class="photo-frame w-40 h-40 md:w-48 md:h-48 rounded-3xl overflow-hidden">
+                    <div class="w-full h-full bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center">
+                        <i class="fa-solid fa-code text-8xl text-white/90"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name & Title -->
+            <div class="flex-1 text-center lg:text-left">
+                <h1 class="header-font header-name text-6xl md:text-7xl font-bold tracking-tighter leading-none">AHMED KHAN</h1>
+                <p class="text-3xl md:text-4xl text-cyan-400 font-medium mt-2 tracking-wide">D365 FinOps Technical Consultant</p>
+                
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4 mt-8">
+                    <span class="inline-flex items-center gap-x-2 bg-white/10 px-5 py-2.5 rounded-3xl text-sm">
+                        <i class="fa-solid fa-envelope"></i>
+                        ahmed.khan@d365expert.com
+                    </span>
+                    <span class="inline-flex items-center gap-x-2 bg-white/10 px-5 py-2.5 rounded-3xl text-sm">
+                        <i class="fa-solid fa-phone"></i>
+                        +92 300 1234567
+                    </span>
+                    <span class="inline-flex items-center gap-x-2 bg-white/10 px-5 py-2.5 rounded-3xl text-sm">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Karachi, Pakistan
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right Info -->
+            <div class="text-center lg:text-right text-sm leading-tight">
+                <div class="flex items-center justify-center lg:justify-end gap-x-2 text-emerald-400 mb-2">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                    </span>
+                    Available for Projects
+                </div>
+                <p class="text-white/70">8+ Years Experience</p>
+                <p class="text-white/70">Microsoft MVP • MB-500 Certified</p>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row">
+            
+            <!-- LEFT SIDEBAR -->
+            <div class="sidebar lg:w-96 px-8 py-10 text-white">
+                
+                <div class="mb-10">
+                    <h2 class="section-title text-2xl font-semibold mb-6 flex items-center gap-x-3">
+                        <i class="fa-solid fa-user"></i> SUMMARY
+                    </h2>
+                    <p class="text-white/80 text-[15.2px] leading-relaxed">
+                        Senior Dynamics 365 Finance & Operations Technical Consultant with 8+ years of experience in 
+                        X++ development, SQL optimization, and enterprise-grade implementations. 
+                        Specialized in building scalable, high-performance solutions for manufacturing, retail & finance sectors.
+                    </p>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="section-title text-2xl font-semibold mb-6 flex items-center gap-x-3">
+                        <i class="fa-solid fa-code"></i> CORE SKILLS
+                    </h2>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> X++ Development</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> D365 FinOps</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> SQL Server Mastery</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> Azure Integration</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> Power BI & Automate</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> Data Migration (DIXF)</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> Performance Tuning</div>
+                        <div class="flex items-center gap-x-2"><i class="fa-solid fa-check text-cyan-400"></i> Azure DevOps</div>
+                    </div>
+                </div>
+
+                <div class="mb-10">
+                    <h2 class="section-title text-2xl font-semibold mb-6 flex items-center gap-x-3">
+                        <i class="fa-solid fa-certificate"></i> CERTIFICATIONS
+                    </h2>
+                    <div class="space-y-4 text-sm">
+                        <div class="flex gap-x-3">
+                            <i class="fa-solid fa-trophy text-amber-400 mt-1"></i>
+                            <div>
+                                <p class="font-medium">MB-500: Microsoft Dynamics 365 Finance & Operations Developer</p>
+                                <p class="text-white/60 text-xs">2024 • Valid till 2027</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-3">
+                            <i class="fa-solid fa-trophy text-amber-400 mt-1"></i>
+                            <div>
+                                <p class="font-medium">Microsoft MVP – Dynamics 365</p>
+                                <p class="text-white/60 text-xs">2024 – 2025</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-x-3">
+                            <i class="fa-solid fa-trophy text-amber-400 mt-1"></i>
+                            <div>
+                                <p class="font-medium">Azure Data Engineer Associate (DP-203)</p>
+                                <p class="text-white/60 text-xs">2024</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="section-title text-2xl font-semibold mb-6 flex items-center gap-x-3">
+                        <i class="fa-solid fa-globe"></i> LANGUAGES
+                    </h2>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center">
+                            <span>English</span>
+                            <span class="text-emerald-400 text-sm">Fluent</span>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span>Urdu</span>
+                            <span class="text-emerald-400 text-sm">Native</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-auto pt-12 text-xs text-white/40 text-center">
+                    Last updated: April 2026
+                </div>
+            </div>
+
+            <!-- MAIN CONTENT -->
+            <div class="flex-1 px-8 md:px-12 py-10 bg-white">
+                
+                <!-- Experience -->
+                <div class="mb-14">
+                    <h2 class="section-title text-3xl font-semibold mb-8 text-zinc-900">Professional Experience</h2>
+                    
+                    <div class="space-y-12">
+                        <!-- Exp 1 -->
+                        <div class="experience-card">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-semibold text-xl">Lead Technical Consultant</h3>
+                                    <p class="text-cyan-600 font-medium">Nexus Dynamics (Microsoft Gold Partner) • 2023 – Present</p>
+                                </div>
+                                <span class="text-sm text-zinc-500">3.5+ Years</span>
+                            </div>
+                            <ul class="mt-5 space-y-3 text-zinc-600 text-[15.2px]">
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Led D365 FinOps implementations for 7 enterprise clients (>$14M total value)</li>
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Developed 40+ custom X++ modules for finance, inventory & supply chain</li>
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Achieved 68% improvement in database performance through SQL optimization</li>
+                            </ul>
+                        </div>
+
+                        <!-- Exp 2 -->
+                        <div class="experience-card">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-semibold text-xl">Senior X++ Developer</h3>
+                                    <p class="text-cyan-600 font-medium">Horizon ERP Solutions • 2021 – 2023</p>
+                                </div>
+                                <span class="text-sm text-zinc-500">2 Years</span>
+                            </div>
+                            <ul class="mt-5 space-y-3 text-zinc-600 text-[15.2px]">
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Designed custom extensions and integrations for manufacturing clients</li>
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Built automated data migration framework handling 12M+ records</li>
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Mentored 6 junior developers on X++ and Azure DevOps best practices</li>
+                            </ul>
+                        </div>
+
+                        <!-- Exp 3 -->
+                        <div class="experience-card">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="font-semibold text-xl">SQL & BI Engineer</h3>
+                                    <p class="text-cyan-600 font-medium">TechNova Systems • 2019 – 2021</p>
+                                </div>
+                                <span class="text-sm text-zinc-500">2 Years</span>
+                            </div>
+                            <ul class="mt-5 space-y-3 text-zinc-600 text-[15.2px]">
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Optimized SQL environments for Dynamics AX to D365 migration</li>
+                                <li class="flex gap-x-3"><span class="text-cyan-500 font-bold">→</span> Developed executive Power BI dashboards for real-time financial insights</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Projects -->
+                <div>
+                    <h2 class="section-title text-3xl font-semibold mb-8 text-zinc-900">Key Projects</h2>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="experience-card border border-slate-200 p-6 rounded-2xl">
+                            <h4 class="font-semibold">Global Inventory Optimization Platform</h4>
+                            <p class="text-cyan-600 text-sm mt-1">Manufacturing • 2025</p>
+                            <p class="text-zinc-600 text-sm mt-3">X++ + Azure solution reducing stockouts by 83% for a $2.4B company.</p>
+                        </div>
+                        <div class="experience-card border border-slate-200 p-6 rounded-2xl">
+                            <h4 class="font-semibold">Intelligent Financial Consolidation Engine</h4>
+                            <p class="text-cyan-600 text-sm mt-1">Finance • 2024</p>
+                            <p class="text-zinc-600 text-sm mt-3">Real-time multi-currency consolidation across 14 subsidiaries using X++ & SQL.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="max-w-[1200px] mx-auto text-center text-xs text-slate-400 mt-10 px-6 no-print">
+        Built as an interactive professional resume • HTML + Tailwind CSS + JavaScript
+        <span class="block mt-1">D365 FinOps | X++ | SQL | Azure • Karachi, Pakistan</span>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+
+        // Keyboard shortcut for print
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'p' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>

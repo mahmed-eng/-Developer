@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD AHMED HASHMI - Technical Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+        @page {
+            size: A4 portrait;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background: #f8fafc;
+            margin: 0;
+            padding: 25px 0;
+        }
+
+        .resume {
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1E40AF, #2563EB);
+        }
+
+        .section-title {
+            color: #1E40AF;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 45px;
+            height: 3px;
+            background: #3B82F6;
+            border-radius: 9999px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #1E40AF, #3B82F6);
+            border-radius: 9999px;
+        }
+
+        @media print {
+            body { margin: 0; padding: 0; background: white; }
+            .resume { box-shadow: none; width: 100%; }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume">
+        <!-- Blue Header -->
+        <div class="header text-white px-8 py-6 flex items-center gap-6">
+            <div class="w-28 h-28 bg-white rounded-2xl p-1 flex-shrink-0 shadow-md">
+                <img src="https://media.licdn.com/dms/image/v2/D4D03AQFXgMKltAGFeA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718221418837?e=1780531200&v=beta&t=Gu4dTgoPCOFc934FwRzdAf_W10uhj7KyY8SqD5cJG7A" 
+                     class="w-full h-full object-cover rounded-xl" alt="Muhammad Ahmed Hashmi">
+            </div>
+            
+            <div class="flex-1">
+                <h1 class="text-4xl font-bold tracking-tight">MUHAMMAD AHMED HASHMI</h1>
+                <p class="text-xl mt-1">TECHNICAL CONSULTANT | D365 F&O</p>
+                
+                <div class="flex flex-wrap gap-x-6 gap-y-2 mt-5 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i>
+                        ahmedhashmijunior97@gmail.com
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-phone"></i>
+                        +92 336 2245627
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Karachi, Pakistan
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-12">
+            <!-- Left Sidebar -->
+            <div class="col-span-5 bg-slate-50 p-8 space-y-9">
+                
+                <!-- Contact -->
+                <div>
+                    <h2 class="section-title flex items-center gap-2">
+                        <i class="fa-solid fa-address-card"></i> CONTACT
+                    </h2>
+                    <div class="space-y-4 text-sm mt-5">
+                        <p><strong>Email:</strong><br>ahmedhashmijunior97@gmail.com</p>
+                        <p><strong>Phone:</strong><br>+92 336 2245627</p>
+                        <p><strong>Address:</strong><br>House R-75, Sector 16-A<br>Gulshan-e-Waseem, Bufferzone<br>Karachi, Sindh</p>
+                    </div>
+                </div>
+
+                <!-- Technical Skills with Progress Bars -->
+                <div>
+                    <h2 class="section-title flex items-center gap-2">
+                        <i class="fa-solid fa-laptop-code"></i> TECHNICAL SKILLS
+                    </h2>
+                    <div class="space-y-6 mt-6">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium">D365 Finance & Operations</span>
+                                <span class="text-blue-600">90%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[90%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium">X++ Programming</span>
+                                <span class="text-blue-600">85%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium">Integration & API</span>
+                                <span class="text-blue-600">88%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[88%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium">.NET Development</span>
+                                <span class="text-blue-600">80%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[80%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium">SQL Server</span>
+                                <span class="text-blue-600">82%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[82%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1.5">
+                                <span class="font-medium">Power Platform</span>
+                                <span class="text-blue-600">75%</span>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[75%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div>
+                    <h2 class="section-title">EDUCATION</h2>
+                    <div class="space-y-5 mt-5 text-sm">
+                        <div>
+                            <p class="font-semibold">MCS – Master's in Computer Science</p>
+                            <p class="text-slate-600">University of Karachi</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold">BCS – Bachelor of Computer Science</p>
+                            <p class="text-slate-600">University of Karachi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-span-7 p-8 space-y-9">
+                <div>
+                    <h2 class="section-title">PROFESSIONAL SUMMARY</h2>
+                    <p class="text-slate-700 leading-relaxed text-[15px]">
+                        Dynamic Technical Consultant with <strong>2.5+ years</strong> of hands-on experience in Microsoft Dynamics 365 Finance and Operations. 
+                        Specialized in system implementation, customization, integration development, and delivering technical solutions that drive business efficiency.
+                    </p>
+                </div>
+
+                <div>
+                    <h2 class="section-title">WORK EXPERIENCE</h2>
+                    
+                    <div class="mt-6">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold text-lg">Technical Consultant</h3>
+                                <p class="text-blue-700">DINERS • Karachi</p>
+                            </div>
+                            <p class="text-slate-500 text-sm font-medium">Dec 2022 – Present</p>
+                        </div>
+                        <ul class="mt-4 text-slate-600 text-[14.8px] list-disc pl-5 space-y-2">
+                            <li>Client communication, requirement gathering and solution design</li>
+                            <li>D365 F&O implementation, customization and troubleshooting</li>
+                            <li><strong>Designed and developed seamless integration for Transfer Orders</strong> with external system — selected Transfer IDs are shipped/received externally and successfully synchronized back to Dynamics 365</li>
+                            <li>Developed and consumed APIs for real-time data synchronization</li>
+                            <li>Provided training and post-go-live support to end users</li>
+                        </ul>
+                    </div>
+
+                    <div class="mt-10">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="font-semibold text-lg">.NET Developer</h3>
+                                <p class="text-blue-700">EDUMAN • Karachi</p>
+                            </div>
+                            <p class="text-slate-500 text-sm font-medium">Feb 2020 – Nov 2022</p>
+                        </div>
+                        <ul class="mt-4 text-slate-600 text-[14.8px] list-disc pl-5 space-y-2">
+                            <li>Developed full-stack School Management System (EDUMAN)</li>
+                            <li>Built multiple Crystal Reports for fee and student management</li>
+                            <li>Backend development using .NET MVC architecture</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <div class="text-center mt-10 no-print">
+        <button onclick="window.print()" 
+                class="bg-blue-700 hover:bg-blue-800 text-white px-10 py-4 rounded-3xl font-medium flex items-center gap-3 mx-auto shadow-lg">
+            <i class="fa-solid fa-print"></i> Save as PDF
+        </button>
+    </div>
+
+</body>
+</html>

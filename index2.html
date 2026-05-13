@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD AHMED HASHMI | Dynamics 365 Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+
+        :root {
+            --primary: #00d4ff;
+        }
+
+        * {
+            transition-property: all;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 250ms;
+        }
+
+        .resume-wrapper {
+            max-width: 1200px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 
+                0 40px 70px -20px rgb(0 212 255 / 0.3),
+                0 20px 25px -5px rgb(0 0 0 / 0.15);
+        }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #0a2540 0%, #00b8d4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(0,212,255,0.4) 0%, transparent 60%);
+            animation: gradientMove 25s ease infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .name-text {
+            font-family: 'Playfair Display', sans-serif;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            line-height: 1;
+            letter-spacing: -4px;
+            text-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .section-header {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 2.2rem;
+        }
+
+        .section-header::after {
+            content: '';
+            height: 5px;
+            width: 70px;
+            background: linear-gradient(to right, #00d4ff, #00ffcc);
+            border-radius: 9999px;
+            box-shadow: 0 0 15px #00d4ff;
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 25px 50px -12px rgb(0 212 255 / 0.25);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px) scale(1.04);
+            box-shadow: 0 30px 60px -15px rgb(0 212 255 / 0.4);
+        }
+
+        .timeline-dot {
+            animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+
+        .skill-progress {
+            animation: progressFill 2s ease-in-out forwards;
+        }
+
+        @keyframes progressFill {
+            from { width: 0%; }
+            to { width: 85%; }
+        }
+
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: #00d4ff;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover:after {
+            width: 100%;
+        }
+
+        .print-btn {
+            animation: float 2.5s ease-in-out infinite;
+        }
+
+        @media (max-width: 768px) {
+            .resume-wrapper { margin: 15px; border-radius: 24px; }
+            .hero-bg { padding: 60px 20px !important; }
+            .name-text { font-size: 2.8rem; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-[#0a2540] to-[#001f2e] min-h-screen py-10 font-sans">
+
+    <!-- STICKY NAV -->
+    <nav class="fixed top-6 left-1/2 -translate-x-1/2 z-50 bg-white/90 backdrop-blur-2xl shadow-2xl px-8 py-4 rounded-3xl border border-white/30 flex items-center gap-8 text-sm font-medium text-slate-700">
+        <a href="#hero" onclick="smoothScrollTo('hero')" class="nav-link flex items-center gap-1.5 hover:text-sky-600">
+            <i class="fa-solid fa-house"></i> HOME
+        </a>
+        <a href="#experience" onclick="smoothScrollTo('experience')" class="nav-link flex items-center gap-1.5 hover:text-sky-600">
+            <i class="fa-solid fa-briefcase"></i> EXPERIENCE
+        </a>
+        <a href="#education" onclick="smoothScrollTo('education')" class="nav-link flex items-center gap-1.5 hover:text-sky-600">
+            <i class="fa-solid fa-graduation-cap"></i> EDUCATION
+        </a>
+        <a href="#skills" onclick="smoothScrollTo('skills')" class="nav-link flex items-center gap-1.5 hover:text-sky-600">
+            <i class="fa-solid fa-fire"></i> SKILLS
+        </a>
+        <a href="#hobbies" onclick="smoothScrollTo('hobbies')" class="nav-link flex items-center gap-1.5 hover:text-sky-600">
+            <i class="fa-solid fa-gamepad"></i> MORE
+        </a>
+        <button onclick="window.print()" 
+                class="print-btn ml-4 flex items-center gap-2 bg-gradient-to-r from-[#00d4ff] to-[#00ffcc] text-slate-900 px-7 py-3 rounded-3xl font-bold text-xs tracking-[1px] uppercase shadow-xl">
+            <i class="fa-solid fa-print"></i>
+            PRINT PDF
+        </button>
+    </nav>
+
+    <div class="resume-wrapper mx-auto">
+
+        <!-- HERO -->
+        <div id="hero" class="hero-bg text-white px-8 md:px-16 py-20 md:py-24">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Avatar -->
+                <div class="relative">
+                    <div class="w-56 h-56 rounded-[2.5rem] bg-white/10 backdrop-blur-3xl border-[6px] border-white/40 flex items-center justify-center relative overflow-hidden">
+                        <div class="w-52 h-52 bg-gradient-to-br from-cyan-300 to-white rounded-3xl flex items-center justify-center text-8xl font-bold text-[#0a2540] shadow-2xl ring-8 ring-white/30">
+                            AH
+                        </div>
+                        <!-- Orbit ring -->
+                        <div class="absolute inset-0 border-4 border-white/30 rounded-[2.5rem] animate-[spin_25s_linear_infinite]"></div>
+                        <div class="absolute inset-4 border-2 border-white/20 rounded-3xl animate-[spin_15s_linear_infinite_reverse]"></div>
+                    </div>
+                    <div class="absolute -bottom-2 -right-2 bg-emerald-400 text-white text-xs font-bold px-6 py-2 rounded-3xl shadow-lg flex items-center gap-2">
+                        <span class="relative flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-300"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-white"></span>
+                        </span>
+                        2.5 YRS D365 F&amp;O
+                    </div>
+                </div>
+
+                <div class="flex-1 text-center lg:text-left">
+                    <h1 class="name-text font-bold leading-none">MUHAMMAD AHMED HASHMI</h1>
+                    <div class="flex items-center justify-center lg:justify-start gap-3 mt-4">
+                        <span class="text-4xl">Technical Consultant</span>
+                        <span class="text-5xl">🚀</span>
+                        <div class="px-5 py-1 bg-white/20 text-white text-sm font-semibold rounded-3xl backdrop-blur-md">D365 F&amp;O SPECIALIST</div>
+                    </div>
+
+                    <p class="mt-6 max-w-lg mx-auto lg:mx-0 text-lg opacity-90 leading-relaxed">
+                        From frontend developer to backend &amp; ERP maestro.<br>
+                        Passionate about building powerful solutions with <span class="font-semibold">Microsoft Dynamics 365 Finance and Operations</span>.
+                    </p>
+
+                    <div class="mt-10 flex flex-wrap justify-center lg:justify-start gap-x-10 gap-y-6 text-base">
+                        <a href="tel:+923362245627" class="flex items-center gap-3 hover:scale-110">
+                            <i class="fa-solid fa-phone text-3xl text-emerald-300"></i>
+                            <div>
+                                <div class="text-xs uppercase tracking-widest">Call me</div>
+                                <div>+92 336 2245627</div>
+                            </div>
+                        </a>
+                        <a href="mailto:ahmedhashmijunior97@gmail.com" class="flex items-center gap-3 hover:scale-110">
+                            <i class="fa-solid fa-envelope text-3xl text-emerald-300"></i>
+                            <div>
+                                <div class="text-xs uppercase tracking-widest">Email</div>
+                                <div>ahmedhashmijunior97@gmail.com</div>
+                            </div>
+                        </a>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-location-dot text-3xl text-emerald-300"></i>
+                            <div>
+                                <div class="text-xs uppercase tracking-widest">Location</div>
+                                <div>Karachi, Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats -->
+                    <div class="mt-12 grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
+                        <div class="glass-card text-center rounded-3xl p-6">
+                            <i class="fa-solid fa-clock text-4xl mb-3 text-emerald-300"></i>
+                            <div class="text-4xl font-bold">2.5</div>
+                            <div class="text-xs uppercase tracking-widest text-emerald-100">Years D365 Experience</div>
+                        </div>
+                        <div class="glass-card text-center rounded-3xl p-6">
+                            <i class="fa-solid fa-building text-4xl mb-3 text-emerald-300"></i>
+                            <div class="text-4xl font-bold">DINERS</div>
+                            <div class="text-xs uppercase tracking-widest text-emerald-100">Current Company</div>
+                        </div>
+                        <div class="glass-card text-center rounded-3xl p-6">
+                            <i class="fa-solid fa-university text-4xl mb-3 text-emerald-300"></i>
+                            <div class="text-4xl font-bold">BSc</div>
+                            <div class="text-xs uppercase tracking-widest text-emerald-100">University of Karachi</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="px-8 md:px-16 py-14 space-y-20">
+
+            <!-- SUMMARY -->
+            <div class="text-center">
+                <p class="text-xl md:text-2xl leading-relaxed text-slate-700 max-w-4xl mx-auto">
+                    I started as a frontend developer, mastered backend technologies, and now specialize in 
+                    <span class="font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-teal-500">Microsoft Dynamics 365 Finance &amp; Operations</span>. 
+                    With 2.5+ years of real-world experience, I turn complex business challenges into elegant, scalable technical solutions.
+                </p>
+            </div>
+
+            <!-- WORK EXPERIENCE -->
+            <div id="experience">
+                <div class="section-header text-slate-800 mb-10">
+                    <i class="fa-solid fa-briefcase text-[#00d4ff]"></i>
+                    WORK EXPERIENCE
+                </div>
+                <div class="border-l-4 border-[#00d4ff] pl-10 relative">
+                    <div class="absolute -left-3 top-6 w-7 h-7 bg-[#00d4ff] rounded-full flex items-center justify-center text-white text-xl shadow-[0_0_20px_#00d4ff]">
+                        <i class="fa-solid fa-circle"></i>
+                    </div>
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+                        <div>
+                            <h3 class="text-3xl font-semibold">Technical Consultant</h3>
+                            <p class="text-[#00d4ff] text-2xl">DINERS • Karachi, Sindh</p>
+                        </div>
+                        <div class="mt-3 md:mt-0 px-8 py-3 bg-emerald-100 text-emerald-700 rounded-3xl text-lg font-semibold flex items-center gap-3">
+                            <span class="text-emerald-500">●</span>
+                            DEC 2022 — PRESENT
+                        </div>
+                    </div>
+                    <ul class="space-y-5 text-lg text-slate-600">
+                        <li class="flex gap-4"><i class="fa-solid fa-check-circle text-[#00d4ff] mt-1"></i> Communicate with clients to understand technical needs and challenges</li>
+                        <li class="flex gap-4"><i class="fa-solid fa-check-circle text-[#00d4ff] mt-1"></i> Analyze existing systems and identify areas for improvement</li>
+                        <li class="flex gap-4"><i class="fa-solid fa-check-circle text-[#00d4ff] mt-1"></i> Design technical solutions aligned with business objectives</li>
+                        <li class="flex gap-4"><i class="fa-solid fa-check-circle text-[#00d4ff] mt-1"></i> Assist with implementation, integration, and troubleshooting</li>
+                        <li class="flex gap-4"><i class="fa-solid fa-check-circle text-[#00d4ff] mt-1"></i> Provide training, documentation, and ongoing support to clients</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- EDUCATION + SKILLS -->
+            <div class="grid lg:grid-cols-12 gap-12">
+                <div id="education" class="lg:col-span-5">
+                    <div class="section-header text-slate-800 mb-10">
+                        <i class="fa-solid fa-graduation-cap text-[#00d4ff]"></i>
+                        EDUCATION
+                    </div>
+                    <div class="glass-card rounded-3xl p-10">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="inline-block px-6 py-2 text-xs font-bold bg-gradient-to-r from-cyan-400 to-teal-400 text-white rounded-3xl">IN PROGRESS</span>
+                                <h3 class="text-4xl font-semibold mt-8">Bachelor of Science</h3>
+                                <p class="text-3xl text-slate-700 mt-2">Computer Science &amp; Programming</p>
+                                <p class="mt-6 text-slate-500 text-xl">University of Karachi • Karachi, Sindh</p>
+                            </div>
+                            <div class="text-[#00d4ff] text-8xl font-light opacity-20">2020</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="skills" class="lg:col-span-7">
+                    <div class="section-header text-slate-800 mb-10">
+                        <i class="fa-solid fa-fire text-[#00d4ff]"></i>
+                        CORE SKILLS
+                    </div>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="glass-card rounded-3xl p-8 card-hover">
+                            <div class="flex justify-between mb-6">
+                                <span class="text-4xl">🧩</span>
+                                <div>
+                                    <p class="text-2xl font-semibold">Problem Solving</p>
+                                    <div class="text-amber-400 text-4xl">★★★★☆</div>
+                                </div>
+                            </div>
+                            <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="skill-progress h-3 bg-gradient-to-r from-[#00d4ff] to-[#00ffcc] rounded-full w-0" style="animation-delay: 100ms"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-3xl p-8 card-hover">
+                            <div class="flex justify-between mb-6">
+                                <span class="text-4xl">💻</span>
+                                <div>
+                                    <p class="text-2xl font-semibold">Technical Expertise</p>
+                                    <div class="text-amber-400 text-4xl">★★★★☆</div>
+                                </div>
+                            </div>
+                            <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="skill-progress h-3 bg-gradient-to-r from-[#00d4ff] to-[#00ffcc] rounded-full w-0" style="animation-delay: 300ms"></div>
+                            </div>
+                        </div>
+                        <div class="glass-card rounded-3xl p-8 card-hover">
+                            <div class="flex justify-between mb-6">
+                                <span class="text-4xl">🗣️</span>
+                                <div>
+                                    <p class="text-2xl font-semibold">Communication</p>
+                                    <div class="text-amber-400 text-4xl">★★★★☆</div>
+                                </div>
+                            </div>
+                            <div class="h-3 bg-slate-100 rounded-full overflow-hidden">
+                                <div class="skill-progress h-3 bg-gradient-to-r from-[#00d4ff] to-[#00ffcc] rounded-full w-0" style="animation-delay: 500ms"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HOBBIES + REFERENCES -->
+            <div id="hobbies" class="grid md:grid-cols-2 gap-10">
+                <div>
+                    <div class="section-header text-slate-800 mb-8">
+                        <i class="fa-solid fa-gamepad text-[#00d4ff]"></i>
+                        HOBBIES
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="flex-1 min-w-[160px] glass-card rounded-3xl px-8 py-6 text-xl font-medium flex items-center gap-4 card-hover">
+                            💻 <span>Programming Projects</span>
+                        </div>
+                        <div class="flex-1 min-w-[160px] glass-card rounded-3xl px-8 py-6 text-xl font-medium flex items-center gap-4 card-hover">
+                            📖 <span>Reading Tech Books</span>
+                        </div>
+                        <div class="flex-1 min-w-[160px] glass-card rounded-3xl px-8 py-6 text-xl font-medium flex items-center gap-4 card-hover">
+                            🧩 <span>Problem Solving Games</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="section-header text-slate-800 mb-8">
+                        <i class="fa-solid fa-handshake text-[#00d4ff]"></i>
+                        REFERENCES
+                    </div>
+                    <div class="glass-card rounded-3xl p-10">
+                        <p class="text-3xl font-semibold">Mr. Mohd Imran Laheji</p>
+                        <p class="text-[#00d4ff] text-xl mt-1">IT Head at DINERS</p>
+                        <div class="mt-12 flex items-center text-emerald-600 font-medium">
+                            <i class="fa-solid fa-check-circle text-3xl mr-4"></i>
+                            Contact details available upon request
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FINAL BAR -->
+        <div class="bg-gradient-to-r from-[#0a2540] to-[#001f2e] text-white px-8 md:px-16 py-8 flex flex-col md:flex-row justify-between items-center text-sm">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-heart text-[#00d4ff]"></i>
+                Passionate about Microsoft Dynamics 365 Finance &amp; Operations
+            </div>
+            <div onclick="copyEmail()" class="cursor-pointer flex items-center gap-3 hover:text-[#00d4ff]">
+                <i class="fa-solid fa-copy"></i>
+                <span class="font-semibold">COPY EMAIL TO CLIPBOARD</span>
+            </div>
+            <div class="text-xs opacity-70 mt-4 md:mt-0">
+                Built as an ultra-premium interactive resume • April 2026
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function initializeTailwind() {
+            return { config() { return { theme: { extend: {} } } } }
+        }
+
+        function smoothScrollTo(section) {
+            const el = document.getElementById(section);
+            if (el) {
+                el.scrollIntoView({ behavior: "smooth", block: "start" });
+            }
+        }
+
+        function copyEmail() {
+            navigator.clipboard.writeText('ahmedhashmijunior97@gmail.com').then(() => {
+                const toast = document.createElement('div');
+                toast.style.cssText = `position:fixed; bottom:30px; left:50%; transform:translateX(-50%); 
+                    background:#00d4ff; color:#0a2540; padding:18px 32px; border-radius:9999px; 
+                    font-weight:700; box-shadow:0 20px 25px -5px rgb(0 212 255); z-index:99999;`;
+                toast.innerHTML = `✅ Email copied successfully!`;
+                document.body.appendChild(toast);
+                setTimeout(() => toast.remove(), 2600);
+            });
+        }
+
+        window.onload = function () {
+            initializeTailwind();
+            console.log('%c🚀 SUPER PREMIUM RESUME LOADED - Muhammad Ahmed Hashmi', 'color:#00d4ff; font-size:20px; font-weight:900; letter-spacing:2px;');
+            
+            // Animate all progress bars on load
+            document.querySelectorAll('.skill-progress').forEach(bar => {
+                bar.style.width = '85%';
+            });
+        };
+    </script>
+</body>
+</html>
