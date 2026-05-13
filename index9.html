@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en" class="blue-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUHAMMAD AHMED HASHMI | Technical Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Playfair+Display:wght@700&amp;display=swap');
+      
+        :root {
+            --primary: #1E40AF;
+            --primary-dark: #1E3A8A;
+            --sidebar-bg: linear-gradient(180deg, #EFF6FF 0%, #DBEAFE 100%);
+        }
+      
+        .blue-theme {
+            --primary: #1E40AF;
+            --primary-dark: #1E3A8A;
+            --sidebar-bg: linear-gradient(180deg, #EFF6FF 0%, #DBEAFE 100%);
+        }
+      
+        * {
+            transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
+        }
+      
+        .tailwind-ready {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+      
+        .header-font {
+            font-family: 'Playfair Display', sans-serif;
+        }
+      
+        .resume-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 25px 50px -12px rgb(30 64 175 / 0.25);
+            border-radius: 24px;
+            overflow: hidden;
+        }
+      
+        .sidebar {
+            background: var(--sidebar-bg);
+        }
+      
+        .section-title {
+            position: relative;
+        }
+      
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary);
+            bottom: -6px;
+            left: 0;
+            border-radius: 9999px;
+        }
+      
+        .experience-card {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+      
+        .experience-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgb(30 64 175 / 0.15);
+        }
+      
+        .photo-frame {
+            border: 8px solid var(--primary);
+            box-shadow: 0 0 0 12px #f0f9ff;
+            transition: all 0.3s ease;
+        }
+      
+        .photo-frame:hover {
+            transform: scale(1.05);
+        }
+      
+        .skill-bar {
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+      
+        .skill-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), #60a5fa);
+            border-radius: 9999px;
+        }
+      
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .resume-container {
+                box-shadow: none;
+                max-width: none;
+                border-radius: 0;
+            }
+            body {
+                background: white;
+            }
+        }
+      
+        /* Super Responsive Enhancements */
+        @media (max-width: 640px) {
+            .header-name {
+                font-size: 2.25rem !important;
+                line-height: 1.05;
+            }
+            .header-title {
+                font-size: 1.35rem !important;
+                letter-spacing: 0.125em;
+            }
+            .resume-container {
+                margin: 0 8px;
+                border-radius: 16px;
+            }
+            .sidebar {
+                padding: 2rem 1.25rem;
+            }
+        }
+      
+        @media (max-width: 768px) {
+            .header-flex {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body class="tailwind-ready bg-slate-100 py-6 md:py-10">
+    <!-- Top Bar -->
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-x-3">
+            <div class="w-10 h-10 bg-[var(--primary)] rounded-3xl flex items-center justify-center text-white text-3xl shadow-inner">
+                💻
+            </div>
+            <div>
+                <h1 class="text-2xl font-semibold text-[var(--primary)]">MUHAMMAD AHMED HASHMI</h1>
+                <p class="text-sm text-slate-600 -mt-1">Professional Resume • Technical Consultant</p>
+            </div>
+        </div>
+      
+        <div class="flex items-center gap-x-3 md:gap-x-4 no-print flex-wrap">
+            <button onclick="downloadPDF()"
+                    class="flex items-center gap-x-2 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white px-6 py-3 rounded-3xl font-medium text-sm shadow-lg shadow-[var(--primary)]/30">
+                <i class="fa-solid fa-download"></i>
+                <span class="hidden xs:inline">Download as PDF</span>
+                <span class="xs:hidden">PDF</span>
+            </button>
+          
+            <button onclick="window.print()"
+                    class="flex items-center gap-x-2 border border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)]/5 px-6 py-3 rounded-3xl font-medium text-sm">
+                <i class="fa-solid fa-print"></i>
+                <span class="hidden xs:inline">Print Resume</span>
+                <span class="xs:hidden">Print</span>
+            </button>
+          
+            <button onclick="toggleTheme()"
+                    class="w-11 h-11 flex items-center justify-center border border-slate-300 hover:border-[var(--primary)] rounded-3xl text-2xl bg-white shadow-sm">
+                <i id="theme-icon" class="fa-solid fa-sun"></i>
+            </button>
+        </div>
+    </div>
+  
+    <!-- Resume Content -->
+    <div class="resume-container mx-auto bg-white mx-4 sm:mx-auto">
+      
+        <!-- Header -->
+        <div id="header" class="bg-[var(--primary)] text-white px-8 md:px-12 py-9 flex flex-col md:flex-row items-center gap-8 header-flex">
+            <!-- Photo -->
+            <div class="flex-shrink-0">
+                <div class="photo-frame w-32 h-32 md:w-40 md:h-40 rounded-3xl overflow-hidden ring-4 ring-white/30">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQFXgMKltAGFeA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1718221418837?e=1777507200&v=beta&t=2GgtL_L1ZjpQOsqeAw9jY-FBzAeIsTmGVE4ICi8KZno" 
+                         alt="Muhammad Ahmed Hashmi"
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+          
+            <!-- Name & Title -->
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="header-font header-name text-5xl md:text-6xl font-bold tracking-tighter leading-none">MUHAMMAD AHMED HASHMI</h1>
+                <div class="flex items-center justify-center md:justify-start gap-x-3 mt-3">
+                    <div class="h-px w-12 bg-white/70"></div>
+                    <p class="header-title text-2xl md:text-3xl font-medium tracking-[0.125em]">TECHNICAL CONSULTANT</p>
+                    <div class="h-px flex-1 bg-white/30"></div>
+                </div>
+              
+                <!-- Quick Tags -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-2 mt-7">
+                    <span onclick="copyToClipboard('ahmedhashmijunior97@gmail.com')"
+                          class="inline-flex items-center gap-x-1.5 text-sm bg-white/20 hover:bg-white/30 px-5 py-2.5 rounded-3xl cursor-pointer">
+                        <i class="fa-solid fa-envelope"></i>
+                        ahmedhashmijunior97@gmail.com
+                    </span>
+                    <span onclick="copyToClipboard('+923362245627')"
+                          class="inline-flex items-center gap-x-1.5 text-sm bg-white/20 hover:bg-white/30 px-5 py-2.5 rounded-3xl cursor-pointer">
+                        <i class="fa-solid fa-phone"></i>
+                        +92 336 2245627
+                    </span>
+                    <span class="inline-flex items-center gap-x-1.5 text-sm bg-white/20 px-5 py-2.5 rounded-3xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Karachi, Pakistan
+                    </span>
+                </div>
+            </div>
+          
+            <!-- Right side header info -->
+            <div class="text-center md:text-right text-sm leading-tight hidden sm:block">
+                <p class="opacity-90 text-base">House R-75, Sector 16-A</p>
+                <p class="opacity-90">Gulshan-e-Waseem, Bufferzone</p>
+                <p class="opacity-90">Karachi, Sindh</p>
+                <div class="mt-6 flex items-center justify-center md:justify-end gap-x-2">
+                    <span class="text-xs bg-white/20 px-4 py-1 rounded-3xl">2.5+ Years D365 F&amp;O</span>
+                </div>
+                <p class="mt-3 text-xs opacity-70">Available for immediate opportunities</p>
+            </div>
+        </div>
+      
+        <div class="flex flex-col lg:flex-row">
+          
+            <!-- LEFT SIDEBAR -->
+            <div id="sidebar" class="sidebar lg:w-96 px-8 py-10 border-r border-slate-100">
+                
+                <!-- Contact -->
+                <div class="mb-10">
+                    <h2 class="section-title text-[var(--primary)] text-xl font-semibold mb-5 flex items-center gap-x-2">
+                        <i class="fa-solid fa-address-card"></i>
+                        CONTACT
+                    </h2>
+                    <div class="space-y-5">
+                        <a href="mailto:ahmedhashmijunior97@gmail.com" class="flex items-start gap-x-3 group">
+                            <i class="fa-solid fa-envelope mt-1 text-[var(--primary)]"></i>
+                            <div>
+                                <p class="font-medium group-hover:text-[var(--primary)]">ahmedhashmijunior97@gmail.com</p>
+                                <p class="text-xs text-slate-500">Email</p>
+                            </div>
+                        </a>
+                        <a href="tel:+923362245627" class="flex items-start gap-x-3 group">
+                            <i class="fa-solid fa-phone mt-1 text-[var(--primary)]"></i>
+                            <div>
+                                <p class="font-medium group-hover:text-[var(--primary)]">+92 336 2245627</p>
+                                <p class="text-xs text-slate-500">Phone / WhatsApp</p>
+                            </div>
+                        </a>
+                        <div class="flex items-start gap-x-3">
+                            <i class="fa-solid fa-location-dot mt-1 text-[var(--primary)]"></i>
+                            <div>
+                                <p class="font-medium">House R-75, Sector 16-A<br>Gulshan-e-Waseem, Bufferzone<br>Karachi, Sindh, Pakistan</p>
+                                <p class="text-xs text-slate-500">Address</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- Skills -->
+                <div class="mb-10">
+                    <h2 class="section-title text-[var(--primary)] text-xl font-semibold mb-5 flex items-center gap-x-2">
+                        <i class="fa-solid fa-chart-bar"></i>
+                        SKILLS
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <p class="font-medium text-slate-700">Problem Solving</p>
+                                <div class="flex text-amber-400">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <p class="font-medium text-slate-700">Technical Expertise</p>
+                                <div class="flex text-amber-400">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <p class="font-medium text-slate-700">Communication</p>
+                                <div class="flex text-amber-400">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half-stroke"></i>
+                                </div>
+                            </div>
+                            <div class="skill-bar"><div class="skill-fill w-[85%]"></div></div>
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- Education - Updated with all levels -->
+                <div class="mb-10">
+                    <h2 class="section-title text-[var(--primary)] text-xl font-semibold mb-5 flex items-center gap-x-2">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        EDUCATION
+                    </h2>
+                    <div class="space-y-6 text-sm">
+                        <div>
+                            <p class="font-semibold text-slate-800">MATRICULATION</p>
+                            <p class="text-slate-500">Board of Secondary Education of Karachi</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">INTERMEDIATE</p>
+                            <p class="text-slate-500">Board of Intermediate Education of Karachi</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">BACHELOR'S</p>
+                            <p class="text-slate-600">BCS – Bachelor of Computer Science</p>
+                            <p class="text-slate-500 text-xs">UBIT Department, University of Karachi (KU)</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-slate-800">MASTER'S</p>
+                            <p class="text-slate-600">MCS – Master's in Computer Science</p>
+                            <p class="text-slate-500 text-xs">UBIT Department, University of Karachi (KU)</p>
+                        </div>
+                    </div>
+                </div>
+              
+                <!-- Hobbies -->
+                <div class="mb-10">
+                    <h2 class="section-title text-[var(--primary)] text-xl font-semibold mb-5 flex items-center gap-x-2">
+                        <i class="fa-solid fa-gamepad"></i>
+                        HOBBIES
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="inline-flex items-center px-4 py-2 bg-white/70 text-slate-700 text-sm rounded-3xl">Programming Projects</span>
+                        <span class="inline-flex items-center px-4 py-2 bg-white/70 text-slate-700 text-sm rounded-3xl">Reading Tech Books</span>
+                        <span class="inline-flex items-center px-4 py-2 bg-white/70 text-slate-700 text-sm rounded-3xl">Problem Solving Games</span>
+                    </div>
+                </div>
+              
+                <!-- References -->
+                <div>
+                    <h2 class="section-title text-[var(--primary)] text-xl font-semibold mb-5 flex items-center gap-x-2">
+                        <i class="fa-solid fa-user-tie"></i>
+                        REFERENCES
+                    </h2>
+                    <p class="text-slate-700 text-sm leading-relaxed">
+                        Mr. Mohd Imran Laheji<br>
+                        <span class="text-slate-500">IT Head at Diners</span><br>
+                        Contact details available upon request
+                    </p>
+                </div>
+              
+                <div class="mt-auto pt-12 text-xs text-slate-400 text-center">
+                    Last updated: April 2026
+                </div>
+            </div>
+          
+            <!-- MAIN CONTENT -->
+            <div class="flex-1 px-8 md:px-12 py-10">
+                <!-- About Me -->
+                <div class="mb-12">
+                    <h2 class="section-title text-[var(--primary)] text-2xl font-semibold mb-6">About Me</h2>
+                    <p class="text-slate-600 leading-relaxed text-[15.5px]">
+                        I began my professional journey as a frontend developer, but over time, I developed a keen interest in backend development. Throughout my career, I have worked with various tech stacks, including .NET MVC web applications, which gave me a solid foundation in full-stack development. Currently, I am proficiently using Microsoft's efficient ERP solution, Dynamics 365 Finance and Operations (D365 F&amp;O), which has proven to be highly user-friendly and effective. I am passionate about this field and aspire to pursue my career by working extensively with Dynamics 365 Finance and Operations. Additionally, I already have 2.5 years of valuable experience in D365 F&amp;O.
+                    </p>
+                </div>
+              
+                <!-- Professional Experience -->
+                <div>
+                    <h2 class="section-title text-[var(--primary)] text-2xl font-semibold mb-6 flex items-center justify-between flex-wrap gap-3">
+                        Professional Experience
+                        <span class="text-sm font-medium bg-[var(--primary)]/10 text-[var(--primary)] px-5 py-1.5 rounded-3xl">4.5+ Years Total</span>
+                    </h2>
+                  
+                    <div class="space-y-12">
+                        
+                        <!-- Most Recent -->
+                        <div class="experience-card border-l-4 border-[var(--primary)] pl-6 py-1">
+                            <div class="flex justify-between items-baseline flex-wrap gap-2">
+                                <div>
+                                    <h3 class="font-semibold text-xl">Technical Consultant</h3>
+                                    <p class="text-[var(--primary)] font-medium text-lg">DINERS • Karachi, Sindh</p>
+                                </div>
+                                <p class="text-slate-500 font-medium">Dec 2022 – Present</p>
+                            </div>
+                            <ul class="mt-6 space-y-3 text-slate-600 text-[15.2px]">
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Communicate with clients to understand technical needs and challenges.</li>
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Analyze existing systems and processes to identify areas for improvement.</li>
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Design technical solutions aligned with business objectives.</li>
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Assist with implementation, integration, and troubleshooting.</li>
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Provide training, documentation, and ongoing support to clients.</li>
+                            </ul>
+                        </div>
+
+                        <!-- EDUMAN Experience -->
+                        <div class="experience-card border-l-4 border-[var(--primary)] pl-6 py-1">
+                            <div class="flex justify-between items-baseline flex-wrap gap-2">
+                                <div>
+                                    <h3 class="font-semibold text-xl">.NET Developer</h3>
+                                    <p class="text-[var(--primary)] font-medium text-lg">EDUMAN • Karachi, Sindh</p>
+                                </div>
+                                <p class="text-slate-500 font-medium">Feb 2020 – Nov 2022</p>
+                            </div>
+                            <ul class="mt-6 space-y-3 text-slate-600 text-[15.2px]">
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Developed and maintained EDUMAN — a custom-built school management solution used to register schools and generate fee vouchers &amp; student cards.</li>
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Designed and implemented multiple Crystal Reports for fee management, student records, and administrative modules.</li>
+                                <li class="flex gap-x-3"><span class="text-[var(--primary)] font-bold text-xl leading-none mt-px">•</span> Built and enhanced backend modules using .NET MVC framework, contributing to full-stack development of the in-house solution.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Footer -->
+    <div class="max-w-[1200px] mx-auto text-center text-xs text-slate-400 mt-8 px-6 no-print">
+        Built as interactive webpage version of Muhammad Ahmed Hashmi's resume • HTML + Tailwind CSS + JavaScript
+        <span class="block mt-1">Made with ❤️ for a passionate D365 F&amp;O Technical Consultant • Updated April 2026</span>
+    </div>
+  
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+          
+            if (html.classList.contains('blue-theme')) {
+                html.classList.remove('blue-theme');
+                icon.classList.replace('fa-sun', 'fa-palette');
+                localStorage.setItem('theme', 'default');
+            } else {
+                html.classList.add('blue-theme');
+                icon.classList.replace('fa-palette', 'fa-sun');
+                localStorage.setItem('theme', 'blue');
+            }
+        }
+      
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                const toast = document.createElement('div');
+                toast.style.cssText = `position:fixed; bottom:24px; left:50%; transform:translateX(-50%); background:var(--primary); color:white; padding:14px 28px; border-radius:9999px; box-shadow:0 10px 15px -3px rgb(30 64 175); display:flex; align-items:center; gap:10px; z-index:9999; font-size:14px;`;
+                toast.innerHTML = `
+                    <i class="fa-solid fa-check-circle"></i>
+                    <span>Copied to clipboard!</span>
+                `;
+                document.body.appendChild(toast);
+              
+                setTimeout(() => {
+                    toast.style.transition = 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)';
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translateX(-50%) translateY(12px)';
+                    setTimeout(() => toast.remove(), 400);
+                }, 2200);
+            });
+        }
+      
+        function downloadPDF() {
+            const resume = document.querySelector('.resume-container');
+            const originalShadow = resume.style.boxShadow;
+            resume.style.boxShadow = 'none';
+            resume.style.border = '1px solid #e2e8f0';
+          
+            const printContents = resume.innerHTML;
+            const originalContents = document.body.innerHTML;
+          
+            document.body.innerHTML = `
+                <style>
+                    @page { size: A4 landscape; margin: 0; }
+                    body { margin: 0; padding: 40px 40px; font-family: 'Inter', system-ui, sans-serif; }
+                </style>
+                <div style="max-width: 1100px; margin: 0 auto; padding: 40px;">${printContents}</div>
+            `;
+          
+            window.print();
+          
+            setTimeout(() => {
+                document.body.innerHTML = originalContents;
+                window.location.reload();
+            }, 150);
+        }
+      
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            const html = document.documentElement;
+            const icon = document.getElementById('theme-icon');
+          
+            if (savedTheme === 'default') {
+                html.classList.remove('blue-theme');
+                icon.classList.replace('fa-sun', 'fa-palette');
+            } else {
+                icon.classList.replace('fa-palette', 'fa-sun');
+            }
+        };
+    </script>
+</body>
+</html>
